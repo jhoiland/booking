@@ -262,7 +262,11 @@ export default function BookingCalendar({ session }: BookingCalendarProps) {
           mt: 3,
         }}
       >
-        <SeasonChart bookings={bookings} year={currentMonth.getFullYear()} />
+        <SeasonChart
+          bookings={bookings}
+          year={currentMonth.getFullYear()}
+          onMonthClick={(date) => setCurrentMonth(date)}
+        />
         <MaintenanceList canEdit={canEdit} />
       </Box>
 

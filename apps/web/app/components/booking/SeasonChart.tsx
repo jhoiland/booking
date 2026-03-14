@@ -18,9 +18,10 @@ const SEASON_MONTHS = [4, 5, 6, 7, 8, 9]; // May(4) - October(9) zero-indexed
 interface SeasonChartProps {
   bookings: Booking[];
   year: number;
+  onMonthClick?: (date: Date) => void;
 }
 
-export default function SeasonChart({ bookings, year }: SeasonChartProps) {
+export default function SeasonChart({ bookings, year, onMonthClick }: SeasonChartProps) {
   const monthData = SEASON_MONTHS.map((monthIdx) => {
     const monthDate = new Date(year, monthIdx, 1);
     const monthStart = startOfMonth(monthDate);
@@ -45,6 +46,7 @@ export default function SeasonChart({ bookings, year }: SeasonChartProps) {
     const pct = Math.round((occupiedDays.size / daysInMonth) * 100);
     return {
       label: format(monthDate, "MMM", { locale: nb }),
+      monthIdx,
       pct,
       days: occupiedDays.size,
       total: daysInMonth,
@@ -75,7 +77,21 @@ export default function SeasonChart({ bookings, year }: SeasonChartProps) {
 
       <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
         {monthData.map((m) => (
-          <Box key={m.label} sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
+          <Box
+            key={m.label}
+            onClick={() => onMonthClick?.(new Date(year, m.monthIdx, 1))}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 1.5,
+              cursor: onMonthClick ? "pointer" : "default",
+              borderRadius: 1,
+              px: 0.5,
+              mx: -0.5,
+              transition: "background-color 0.15s",
+              "&:hover": onMonthClick ? { bgcolor: "rgba(255,255,255,0.06)" } : {},
+            }}
+          >
             <Typography
               sx={{
                 width: 36,
