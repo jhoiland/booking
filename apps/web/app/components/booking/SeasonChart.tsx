@@ -14,6 +14,7 @@ import { nb } from "date-fns/locale";
 import type { Booking } from "./types";
 
 const SEASON_MONTHS = [4, 5, 6, 7, 8, 9]; // May(4) - October(9) zero-indexed
+const HIGH_SEASON = new Set([4, 5, 6, 7]); // mai, juni, juli, august
 
 interface SeasonChartProps {
   bookings: Booking[];
@@ -44,12 +45,14 @@ export default function SeasonChart({ bookings, year, onMonthClick }: SeasonChar
     });
 
     const pct = Math.round((occupiedDays.size / daysInMonth) * 100);
+    const isHighSeason = HIGH_SEASON.has(monthIdx);
     return {
       label: format(monthDate, "MMM", { locale: nb }),
       monthIdx,
       pct,
       days: occupiedDays.size,
       total: daysInMonth,
+      isHighSeason,
     };
   });
 
@@ -75,8 +78,83 @@ export default function SeasonChart({ bookings, year, onMonthClick }: SeasonChar
         />
       </Box>
 
-      <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
-        {monthData.map((m) => (
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
+        {/* Høysesong header */}
+        <Typography
+          variant="caption"
+          sx={{
+            color: "#f59e0b",
+            fontWeight: 700,
+            fontSize: "0.7rem",
+            textTransform: "uppercase",
+            letterSpacing: "0.05em",
+            mt: 0.5,
+            mb: 0.5,
+          }}
+        >
+          Høysesong
+        </Typography>
+        {monthData.filter((m) => m.isHighSeason).map((m) => (
+          <Box
+            key={m.label}
+            onClick={() => onMonthClick?.(new Date(year, m.monthIdx, 1))}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 1.5,
+              cursor: onMonthClick ? "pointer" : "default",
+              borderRadius: 1,
+              px: 0.5,
+              mx: -0.5,
+              transition: "background-color 0.15s",
+              "&:hover": onMonthClick ? { bgcolor: "rgba(255,255,255,0.06)" } : {},
+            }}
+          >
+            <Typography
+              sx={{
+                width: 36,
+                fontSize: "0.8rem",
+                fontWeight: 600,
+                color: "text.secondary",
+                textTransform: "capitalize",
+              }}
+            >
+              {m.label}
+            </Typography>
+            <Box sx={{ flex: 1, height: 20, bgcolor: "rgba(255,255,255,0.06)", borderRadius: 1, overflow: "hidden" }}>
+              <Box
+                sx={{
+                  width: `${m.pct}%`,
+                  height: "100%",
+                  bgcolor: m.pct > 80 ? "#1DB954" : m.pct > 40 ? "#f59e0b" : "#1e90ff",
+                  borderRadius: 1,
+                  transition: "width 0.4s ease",
+                  minWidth: m.pct > 0 ? 4 : 0,
+                }}
+              />
+            </Box>
+            <Typography sx={{ width: 60, fontSize: "0.75rem", color: "text.secondary", textAlign: "right" }}>
+              {m.days}/{m.total} d
+            </Typography>
+          </Box>
+        ))}
+
+        {/* Lavsesong header */}
+        <Typography
+          variant="caption"
+          sx={{
+            color: "#1e90ff",
+            fontWeight: 700,
+            fontSize: "0.7rem",
+            textTransform: "uppercase",
+            letterSpacing: "0.05em",
+            mt: 1.5,
+            mb: 0.5,
+          }}
+        >
+          Lavsesong
+        </Typography>
+        {monthData.filter((m) => !m.isHighSeason).map((m) => (
           <Box
             key={m.label}
             onClick={() => onMonthClick?.(new Date(year, m.monthIdx, 1))}

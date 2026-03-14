@@ -253,7 +253,7 @@ export default function BookingCalendar({ session }: BookingCalendarProps) {
       </Box>
 
       {/* Season chart */}
-      <Box sx={{ mt: 3, maxWidth: { xs: "100%", md: "50%" } }}>
+      <Box sx={{ mt: 3 }}>
         <SeasonChart
           bookings={bookings}
           year={currentMonth.getFullYear()}
