@@ -161,6 +161,19 @@ export default function PricesTab({ session }: PricesTabProps) {
                 "& .MuiOutlinedInput-root": {
                   color: "#fff",
                 },
+                "& .MuiOutlinedInput-root.Mui-disabled": {
+                  color: "#fff",
+                  "-webkit-text-fill-color": "#fff",
+                },
+                "& .MuiOutlinedInput-root.Mui-disabled .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "rgba(255,255,255,0.15)",
+                },
+                "& .MuiInputAdornment-root .MuiTypography-root": {
+                  color: "#fff !important",
+                },
+                "& .MuiInputLabel-root.Mui-disabled": {
+                  color: "rgba(255,255,255,0.7)",
+                },
               }}
             />
           ))}
