@@ -131,7 +131,8 @@ export default function BookingCalendar({ session }: BookingCalendarProps) {
         .eq("id", editingBooking.id);
 
       if (error) {
-        setSnackbar({ message: "Kunne ikke oppdatere bookingen. Prøv igjen.", severity: "error" });
+        console.error("Update error:", error);
+        setSnackbar({ message: `Kunne ikke oppdatere: ${error.message}`, severity: "error" });
       } else {
         setSnackbar({ message: "Booking oppdatert", severity: "success" });
       }
