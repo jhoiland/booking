@@ -163,13 +163,19 @@ export default function BookingCalendar({ session }: BookingCalendarProps) {
   async function handleDelete() {
     if (!editingBooking) return;
 
+    const confirmed = window.confirm(
+      `Er du sikker på at du vil slette bookingen for ${editingBooking.guest_name}?`
+    );
+    if (!confirmed) return;
+
     const { error } = await supabase
       .from("bookings")
       .delete()
       .eq("id", editingBooking.id);
 
     if (error) {
-      setSnackbar({ message: "Kunne ikke slette bookingen. Prøv igjen.", severity: "error" });
+      console.error("Delete error:", error);
+      setSnackbar({ message: `Kunne ikke slette: ${error.message}`, severity: "error" });
     } else {
       setSnackbar({ message: "Booking slettet", severity: "success" });
     }

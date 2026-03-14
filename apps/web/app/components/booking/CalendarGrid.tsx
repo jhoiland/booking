@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Typography, useMediaQuery, useTheme } from "@mui/material";
 import {
   startOfMonth,
   endOfMonth,
@@ -53,6 +53,9 @@ export default function CalendarGrid({
   selectionStart,
   selectionEnd,
 }: CalendarGridProps) {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   const monthStart = startOfMonth(currentMonth);
   const monthEnd = endOfMonth(currentMonth);
   const calStart = startOfWeek(monthStart, { weekStartsOn: 1 });
@@ -119,7 +122,7 @@ export default function CalendarGrid({
               textAlign: "center",
               py: 0.5,
               fontWeight: 600,
-              fontSize: "0.75rem",
+              fontSize: { xs: "0.65rem", sm: "0.75rem" },
               color: "text.secondary",
               textTransform: "uppercase",
               letterSpacing: "0.05em",
@@ -181,33 +184,51 @@ export default function CalendarGrid({
                   display: "block",
                   textAlign: "right",
                   pr: 0.5,
-                  fontSize: "0.75rem",
+                  fontSize: { xs: "0.65rem", sm: "0.75rem" },
                 }}
               >
                 {format(day, "d")}
               </Typography>
-              {dayBookings.map((b) => (
-                <Box
-                  key={b.id}
-                  sx={{
-                    bgcolor: `${colorMap.get(b.id) || "#1DB954"}22`,
-                    color: colorMap.get(b.id) || "#1DB954",
-                    border: "1px solid",
-                    borderColor: `${colorMap.get(b.id) || "#1DB954"}44`,
-                    fontSize: "0.65rem",
-                    fontWeight: 600,
-                    px: 0.5,
-                    borderRadius: 0.5,
-                    mb: "2px",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                    whiteSpace: "nowrap",
-                    lineHeight: 1.5,
-                  }}
-                >
-                  {b.guest_name}
-                </Box>
-              ))}
+              {isMobile ? (
+                dayBookings.length > 0 && (
+                  <Box sx={{ display: "flex", gap: "3px", flexWrap: "wrap", justifyContent: "center", mt: 0.25 }}>
+                    {dayBookings.map((b) => (
+                      <Box
+                        key={b.id}
+                        sx={{
+                          width: 6,
+                          height: 6,
+                          borderRadius: "50%",
+                          bgcolor: colorMap.get(b.id) || "#1DB954",
+                        }}
+                      />
+                    ))}
+                  </Box>
+                )
+              ) : (
+                dayBookings.map((b) => (
+                  <Box
+                    key={b.id}
+                    sx={{
+                      bgcolor: `${colorMap.get(b.id) || "#1DB954"}22`,
+                      color: colorMap.get(b.id) || "#1DB954",
+                      border: "1px solid",
+                      borderColor: `${colorMap.get(b.id) || "#1DB954"}44`,
+                      fontSize: "0.65rem",
+                      fontWeight: 600,
+                      px: 0.5,
+                      borderRadius: 0.5,
+                      mb: "2px",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                      whiteSpace: "nowrap",
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    {b.guest_name}
+                  </Box>
+                ))
+              )}
             </Box>
           );
         })}
