@@ -6,6 +6,7 @@ import { Box, Button, Tab, Tabs, TextField, Typography } from "@mui/material";
 import { supabase } from "../lib/supabaseClient";
 import BookingCalendar from "./components/BookingCalendar";
 import PricesTab from "./components/PricesTab";
+import MaintenanceTab from "./components/MaintenanceTab";
 import type { Session } from "@supabase/supabase-js";
 
 export default function HomePage() {
@@ -177,10 +178,12 @@ export default function HomePage() {
         >
           <Tab label="Kalender" />
           <Tab label="Priser" />
+          <Tab label="Vedlikehold" />
         </Tabs>
 
         {activeTab === 0 && <BookingCalendar session={session} />}
         {activeTab === 1 && <PricesTab session={session} />}
+        {activeTab === 2 && <MaintenanceTab session={session} />}
       </Box>
     </Box>
   );

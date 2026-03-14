@@ -17,7 +17,6 @@ import BookingDialog from "./booking/BookingDialog";
 import MonthlySummary from "./booking/MonthlySummary";
 import type { Booking, BookingFormData } from "./booking/types";
 import SeasonChart from "./booking/SeasonChart";
-import MaintenanceList from "./booking/MaintenanceList";
 
 interface BookingCalendarProps {
   session: Session | null;
@@ -253,21 +252,13 @@ export default function BookingCalendar({ session }: BookingCalendarProps) {
         />
       </Box>
 
-      {/* Season chart + Maintenance */}
-      <Box
-        sx={{
-          display: "grid",
-          gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
-          gap: 3,
-          mt: 3,
-        }}
-      >
+      {/* Season chart */}
+      <Box sx={{ mt: 3, maxWidth: { xs: "100%", md: "50%" } }}>
         <SeasonChart
           bookings={bookings}
           year={currentMonth.getFullYear()}
           onMonthClick={(date) => setCurrentMonth(date)}
         />
-        <MaintenanceList canEdit={canEdit} />
       </Box>
 
       {/* Booking dialog */}

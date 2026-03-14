@@ -136,7 +136,7 @@ export default function PricesTab({ session }: PricesTabProps) {
               fullWidth
               slotProps={{
                 input: {
-                  startAdornment: <InputAdornment position="start">€</InputAdornment>,
+                  startAdornment: <InputAdornment position="start">kr</InputAdornment>,
                 },
               }}
             />
