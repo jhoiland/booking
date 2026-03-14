@@ -21,6 +21,7 @@ interface Prices {
   off_season_price: number;
   friends_price: number;
   cleaning_price: number;
+  visitor_price: number;
 }
 
 interface PricesTabProps {
@@ -37,6 +38,7 @@ export default function PricesTab({ session }: PricesTabProps) {
   const [offSeasonPrice, setOffSeasonPrice] = useState("");
   const [friendsPrice, setFriendsPrice] = useState("");
   const [cleaningPrice, setCleaningPrice] = useState("");
+  const [visitorPrice, setVisitorPrice] = useState("");
 
   const canEdit = !!session;
 
@@ -54,6 +56,7 @@ export default function PricesTab({ session }: PricesTabProps) {
       setOffSeasonPrice(String(data.off_season_price));
       setFriendsPrice(String(data.friends_price));
       setCleaningPrice(String(data.cleaning_price));
+      setVisitorPrice(String(data.visitor_price));
     }
     setLoading(false);
   }, []);
@@ -65,12 +68,13 @@ export default function PricesTab({ session }: PricesTabProps) {
   async function handleSave() {
     if (!prices || !session) return;
 
-    const season = parseFloat(seasonPrice);
-    const offSeason = parseFloat(offSeasonPrice);
-    const friends = parseFloat(friendsPrice);
-    const cleaning = parseFloat(cleaningPrice);
+    const season = parseFloat(seasonPrice.replace(/\s/g, ""));
+    const offSeason = parseFloat(offSeasonPrice.replace(/\s/g, ""));
+    const friends = parseFloat(friendsPrice.replace(/\s/g, ""));
+    const cleaning = parseFloat(cleaningPrice.replace(/\s/g, ""));
+    const visitor = parseFloat(visitorPrice.replace(/\s/g, ""));
 
-    if ([season, offSeason, friends, cleaning].some((v) => isNaN(v) || v < 0)) {
+    if ([season, offSeason, friends, cleaning, visitor].some((v) => isNaN(v) || v < 0)) {
       setSnackbar({ message: "Alle priser må være gyldige tall (0 eller høyere)", severity: "error" });
       return;
     }
@@ -83,6 +87,7 @@ export default function PricesTab({ session }: PricesTabProps) {
         off_season_price: offSeason,
         friends_price: friends,
         cleaning_price: cleaning,
+        visitor_price: visitor,
         updated_at: new Date().toISOString(),
       })
       .eq("id", prices.id);
@@ -103,11 +108,24 @@ export default function PricesTab({ session }: PricesTabProps) {
     );
   }
 
+  function formatNOK(value: string): string {
+    const num = parseInt(value.replace(/\s/g, ""), 10);
+    if (isNaN(num)) return value;
+    return num.toLocaleString("nb-NO").replace(/,/g, " ") + ",-";
+  }
+
+  function handlePriceChange(setter: (v: string) => void, value: string) {
+    // Strip formatting, keep only digits
+    const raw = value.replace(/[^\d]/g, "");
+    setter(raw);
+  }
+
   const priceFields = [
     { label: "Pris i sesong (per natt)", value: seasonPrice, setter: setSeasonPrice },
     { label: "Pris utenfor sesong (per natt)", value: offSeasonPrice, setter: setOffSeasonPrice },
     { label: "Vennepris (per natt)", value: friendsPrice, setter: setFriendsPrice },
-    { label: "Pris for vask", value: cleaningPrice, setter: setCleaningPrice },
+    { label: "Pris for utvask", value: cleaningPrice, setter: setCleaningPrice },
+    { label: "Pris for besøkende", value: visitorPrice, setter: setVisitorPrice },
   ];
 
   return (
@@ -129,9 +147,8 @@ export default function PricesTab({ session }: PricesTabProps) {
             <TextField
               key={f.label}
               label={f.label}
-              type="number"
-              value={f.value}
-              onChange={(e) => f.setter(e.target.value)}
+              value={formatNOK(f.value)}
+              onChange={(e) => handlePriceChange(f.setter, e.target.value)}
               disabled={!canEdit}
               fullWidth
               slotProps={{
