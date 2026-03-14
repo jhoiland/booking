@@ -124,8 +124,8 @@ export default function PricesTab({ session }: PricesTabProps) {
     { label: "Pris i sesong (per natt)", value: seasonPrice, setter: setSeasonPrice },
     { label: "Pris utenfor sesong (per natt)", value: offSeasonPrice, setter: setOffSeasonPrice },
     { label: "Vennepris (per natt)", value: friendsPrice, setter: setFriendsPrice },
+    { label: "Pris besøkende venner", value: visitorPrice, setter: setVisitorPrice },
     { label: "Pris for utvask", value: cleaningPrice, setter: setCleaningPrice },
-    { label: "Pris for besøkende", value: visitorPrice, setter: setVisitorPrice },
   ];
 
   return (
