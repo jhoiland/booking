@@ -83,7 +83,7 @@ export default function SeasonChart({ bookings, year, onMonthClick }: SeasonChar
         <Typography
           variant="caption"
           sx={{
-            color: "#f59e0b",
+            color: "#fff",
             fontWeight: 700,
             fontSize: "0.7rem",
             textTransform: "uppercase",
@@ -143,7 +143,7 @@ export default function SeasonChart({ bookings, year, onMonthClick }: SeasonChar
         <Typography
           variant="caption"
           sx={{
-            color: "#1e90ff",
+            color: "#fff",
             fontWeight: 700,
             fontSize: "0.7rem",
             textTransform: "uppercase",

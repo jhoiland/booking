@@ -253,7 +253,13 @@ export default function BookingCalendar({ session }: BookingCalendarProps) {
       </Box>
 
       {/* Season chart */}
-      <Box sx={{ mt: 3 }}>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", md: "1fr 380px" },
+          mt: 3,
+        }}
+      >
         <SeasonChart
           bookings={bookings}
           year={currentMonth.getFullYear()}
