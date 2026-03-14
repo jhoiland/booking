@@ -2,9 +2,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Button, Tab, Tabs, TextField, Typography } from "@mui/material";
 import { supabase } from "../lib/supabaseClient";
 import BookingCalendar from "./components/BookingCalendar";
+import PricesTab from "./components/PricesTab";
 import type { Session } from "@supabase/supabase-js";
 
 export default function HomePage() {
@@ -13,6 +14,7 @@ export default function HomePage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [activeTab, setActiveTab] = useState(0);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -157,7 +159,28 @@ export default function HomePage() {
 
       {/* Main content */}
       <Box sx={{ p: { xs: 2, md: 4 }, maxWidth: 1200, mx: "auto" }}>
-        <BookingCalendar session={session} />
+        <Tabs
+          value={activeTab}
+          onChange={(_, v) => setActiveTab(v)}
+          sx={{
+            mb: 3,
+            "& .MuiTab-root": {
+              color: "text.secondary",
+              fontWeight: 600,
+              fontSize: { xs: "0.85rem", sm: "0.95rem" },
+              minHeight: 42,
+              textTransform: "none",
+            },
+            "& .Mui-selected": { color: "primary.main" },
+            "& .MuiTabs-indicator": { bgcolor: "primary.main" },
+          }}
+        >
+          <Tab label="Kalender" />
+          <Tab label="Priser" />
+        </Tabs>
+
+        {activeTab === 0 && <BookingCalendar session={session} />}
+        {activeTab === 1 && <PricesTab session={session} />}
       </Box>
     </Box>
   );
