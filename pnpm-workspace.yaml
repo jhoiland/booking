@@ -7,3 +7,4 @@ supportedArchitectures:
     - x64
   os:
     - win32
+    - linux
