@@ -69,12 +69,29 @@ export default function HomePage() {
           zIndex: 100,
         }}
       >
-        <Typography variant="h6" sx={{ color: "primary.main" }}>
+        <Typography
+          variant="h6"
+          sx={{
+            color: "primary.main",
+            fontSize: { xs: "0.95rem", sm: "1.25rem" },
+            whiteSpace: "nowrap",
+          }}
+        >
           Booking leilighet Kreta
         </Typography>
         {session ? (
-          <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-            <Typography variant="body2" color="text.secondary">
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              sx={{
+                display: { xs: "none", sm: "block" },
+                maxWidth: 160,
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
+              }}
+            >
               {session.user.email}
             </Typography>
             <Button
@@ -87,7 +104,15 @@ export default function HomePage() {
             </Button>
           </Box>
         ) : (
-          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 1,
+              flexWrap: "wrap",
+              justifyContent: "flex-end",
+            }}
+          >
             <TextField
               placeholder="E-post"
               type="email"
@@ -95,9 +120,10 @@ export default function HomePage() {
               onChange={(e) => setEmail(e.target.value)}
               size="small"
               sx={{
-                width: 180,
+                width: { xs: 130, sm: 180 },
                 "& .MuiOutlinedInput-root": {
                   bgcolor: "rgba(255,255,255,0.07)",
+                  fontSize: { xs: "0.8rem", sm: "1rem" },
                 },
               }}
               onKeyDown={(e) => e.key === "Enter" && handleLogin()}
@@ -109,9 +135,10 @@ export default function HomePage() {
               onChange={(e) => setPassword(e.target.value)}
               size="small"
               sx={{
-                width: 140,
+                width: { xs: 110, sm: 140 },
                 "& .MuiOutlinedInput-root": {
                   bgcolor: "rgba(255,255,255,0.07)",
+                  fontSize: { xs: "0.8rem", sm: "1rem" },
                 },
               }}
               onKeyDown={(e) => e.key === "Enter" && handleLogin()}

@@ -152,7 +152,7 @@ export default function CalendarGrid({
               key={day.toISOString()}
               onClick={() => onDayClick(day)}
               sx={{
-                minHeight: 74,
+                minHeight: { xs: 48, sm: 74 },
                 bgcolor: selected
                   ? "rgba(29, 185, 84, 0.15)"
                   : inMonth

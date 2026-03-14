@@ -10,6 +10,8 @@ import {
   TextField,
   Box,
   IconButton,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { format } from "date-fns";
 import type { Booking, BookingFormData } from "./types";
@@ -63,9 +65,11 @@ export default function BookingDialog({
   }, [booking, defaultStart, defaultEnd, currentMonth, open]);
 
   const isEdit = !!booking;
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
+    <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth fullScreen={isMobile}>
       <DialogTitle sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", pb: 1, fontWeight: 700 }}>
         {isEdit ? "Rediger booking" : "Ny booking"}
         {isEdit && onDelete && (
@@ -87,7 +91,7 @@ export default function BookingDialog({
             required
             fullWidth
           />
-          <Box sx={{ display: "flex", gap: 2 }}>
+          <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: 2 }}>
             <TextField
               label="Fra dato"
               type="date"
