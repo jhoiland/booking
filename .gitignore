@@ -1,0 +1,9 @@
+node_modules/
+.next/
+out/
+generated/
+*.db
+.env
+.env.local
+.env.*.local
+debug-auth.mjs

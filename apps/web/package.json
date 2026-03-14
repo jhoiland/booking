@@ -1,0 +1,45 @@
+{
+  "name": "web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.3.9",
+    "@netlify/plugin-nextjs": "^5.15.9",
+    "@supabase/ssr": "^0.9.0",
+    "@supabase/supabase-js": "^2.99.1",
+    "@tailwindcss/postcss": "4.0.0",
+    "date-fns": "^4.1.0",
+    "next": "16.0.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "zod": "4.0.0",
+    "zustand": "5.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "25.5.0",
+    "autoprefixer": "^10.4.27",
+    "eslint": "9.0.0",
+    "eslint-config-next": "16.0.0",
+    "lightningcss-win32-x64-msvc": "^1.32.0",
+    "postcss": "^8.5.8",
+    "postcss-nesting": "^14.0.0",
+    "prettier": "3.0.0",
+    "tailwindcss": "4.0.0",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}

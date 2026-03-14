@@ -1,0 +1,21 @@
+{
+  "name": "booking-monorepo",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": "20.x"
+  },
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "start": "pnpm --filter web start",
+    "lint": "pnpm --filter web lint",
+    "format": "pnpm --filter web format",
+    "format:check": "pnpm --filter web format:check"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

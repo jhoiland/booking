@@ -1,0 +1,9 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+supportedArchitectures:
+  cpu:
+    - x64
+  os:
+    - win32
