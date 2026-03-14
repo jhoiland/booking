@@ -120,7 +120,7 @@ export default function HomePage() {
               onChange={(e) => setEmail(e.target.value)}
               size="small"
               sx={{
-                width: { xs: 130, sm: 180 },
+                width: { xs: 130, sm: 160 },
                 "& .MuiOutlinedInput-root": {
                   bgcolor: "rgba(255,255,255,0.07)",
                   fontSize: { xs: "0.8rem", sm: "1rem" },
@@ -135,7 +135,7 @@ export default function HomePage() {
               onChange={(e) => setPassword(e.target.value)}
               size="small"
               sx={{
-                width: { xs: 110, sm: 140 },
+                width: { xs: 130, sm: 160 },
                 "& .MuiOutlinedInput-root": {
                   bgcolor: "rgba(255,255,255,0.07)",
                   fontSize: { xs: "0.8rem", sm: "1rem" },
