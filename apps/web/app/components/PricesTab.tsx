@@ -161,7 +161,11 @@ export default function PricesTab({ session }: PricesTabProps) {
                 "& .MuiOutlinedInput-root": {
                   color: "#fff",
                 },
-                "& .MuiOutlinedInput-root.Mui-disabled": {
+                "& .MuiOutlinedInput-input": {
+                  color: "#fff",
+                  "-webkit-text-fill-color": "#fff",
+                },
+                "& .MuiOutlinedInput-input.Mui-disabled": {
                   color: "#fff",
                   "-webkit-text-fill-color": "#fff",
                 },
