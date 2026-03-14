@@ -120,7 +120,7 @@ export default function PricesTab({ session }: PricesTabProps) {
         }}
         elevation={0}
       >
-        <Typography variant="h6" sx={{ fontSize: "1rem", mb: 3 }}>
+        <Typography variant="h6" sx={{ fontSize: "1rem", mb: 3, color: "#fff" }}>
           Priser
         </Typography>
 
@@ -136,7 +136,13 @@ export default function PricesTab({ session }: PricesTabProps) {
               fullWidth
               slotProps={{
                 input: {
-                  startAdornment: <InputAdornment position="start">kr</InputAdornment>,
+                  startAdornment: <InputAdornment position="start" sx={{ color: "#fff" }}>kr</InputAdornment>,
+                },
+                inputLabel: { sx: { color: "rgba(255,255,255,0.7)" } },
+              }}
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  color: "#fff",
                 },
               }}
             />
