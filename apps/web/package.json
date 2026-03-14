@@ -15,7 +15,6 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/material": "^7.3.9",
-    "@netlify/plugin-nextjs": "^5.15.9",
     "@supabase/ssr": "^0.9.0",
     "@supabase/supabase-js": "^2.99.1",
     "@tailwindcss/postcss": "4.0.0",
@@ -32,7 +31,6 @@
     "autoprefixer": "^10.4.27",
     "eslint": "9.0.0",
     "eslint-config-next": "16.0.0",
-
     "postcss": "^8.5.8",
     "postcss-nesting": "^14.0.0",
     "prettier": "3.0.0",
