@@ -65,7 +65,27 @@ const KNOWLEDGE_BASE: QA[] = [
   {
     keywords: ["vær", "weather", "temperatur", "varmt", "kaldt", "regn", "sol", "klima", "grader"],
     answer:
-      "Mai: 24°C, lite regn, 10 timer sol. Juni–august: 28–30°C, nesten ingen regn, 12–13 timer sol — perfekt strandvær. September: 27°C, havet på sitt varmeste (24°C). Oktober: 23°C, noen regnbyger, men fortsatt godt badevær. Havtemperaturen er 20–26°C gjennom sesongen.",
+      "Mai: 23°C dag / 14°C natt, hav 19°C, 9 timer sol. Juni: 28°C, hav 22°C, 12 timer sol. Juli–august: 30°C, hav 25–26°C, nesten null regn — perfekt strandvær! September: 27°C, hav 25°C (varmest!), bare 3 regndager. Oktober: 22°C, hav 23°C, noen regnbyger men fortsatt badevær.",
+  },
+  {
+    keywords: ["hav", "havtemp", "bade", "svømme", "sea", "water", "badetemperatur"],
+    answer:
+      "Havtemperaturen stiger fra 19°C i mai til 26°C i august (årets varmeste). September holder 25°C — fantastisk for bading! Selv i oktober er havet 23°C. Badesesongen med over 20°C hav varer fra juni til november.",
+  },
+  {
+    keywords: ["uv", "solkrem", "solbrenthet", "sunscreen", "solbeskyttelse"],
+    answer:
+      "UV-indeksen er 9–11 (svært høy) i sommermånedene juni–august. Bruk solkrem med høy faktor og søk skygge mellom kl. 11–16. Mai, september og oktober har UV 5–8 — fortsatt viktig med solbeskyttelse.",
+  },
+  {
+    keywords: ["vind", "meltemi", "wind", "bølger", "sjøforhold"],
+    answer:
+      "Den kjente Meltemi-vinden blåser fra nord juni–september (sterkest juli–august). Den gir frisk bris og holder temperaturen behagelig. Nordkysten kan få noe bølger, men strendene nær Pigi er generelt beskyttet. Vindstille dager er vanligst i mai og september.",
+  },
+  {
+    keywords: ["dagslys", "soloppgang", "solnedgang", "sunrise", "sunset", "timer"],
+    answer:
+      "Om sommeren (juni–august) er det over 14 timer dagslys — soloppgang ca. 06:00, solnedgang ca. 20:30. Vår og høst: ca. 06:30–19:00. Lange, lyse kvelder perfekt for middag på terrassen!",
   },
   {
     keywords: ["pris", "kost", "betale", "price", "cost", "vennepris"],

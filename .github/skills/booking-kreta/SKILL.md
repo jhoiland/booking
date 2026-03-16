@@ -38,19 +38,63 @@ description: "Domain knowledge for the Pigi Paradise booking portal. USE FOR: un
 
 ## Vær i Pigi / Rethymno
 
-| Måned | Temp. (dag) | Temp. (natt) | Havtemp. | Nedbør | Sol (timer/dag) |
-|-------|-------------|--------------|----------|--------|------------------|
-| Mai | 24°C | 15°C | 20°C | Lite | 10 |
-| Juni | 28°C | 19°C | 23°C | Svært lite | 12 |
-| Juli | 30°C | 22°C | 25°C | Nesten null | 13 |
-| August | 30°C | 22°C | 26°C | Nesten null | 12 |
-| September | 27°C | 19°C | 24°C | Lite | 10 |
-| Oktober | 23°C | 16°C | 22°C | Moderat | 7 |
+### Klimaoversikt hele året
 
-- **Mai**: Behagelig varme, perfekt for turer og utflukter. Havet begynner å bli badetemperatur.
-- **Juni–August**: Varmt og tørt, ideelt for strand og basseng. Kan bli over 35°C innimellom.
-- **September**: Fortsatt varmt, roligere, havet er på sitt varmeste. Fin turmåned.
-- **Oktober**: Mildere, noen regnbyger, men fortsatt godt badevær. Lavere priser og færre turister.
+| Måned | Dag °C | Natt °C | Hav °C | Nedbør mm | Regndager | Sol t/dag |
+|-------|--------|---------|--------|-----------|-----------|-----------|
+| Januar | 13 | 7 | 17 | 117 | 15 | 4 |
+| Februar | 13 | 7 | 16 | 105 | 13 | 5 |
+| Mars | 15 | 8 | 16 | 70 | 10 | 6 |
+| April | 18 | 11 | 17 | 25 | 7 | 8 |
+| Mai | 23 | 14 | 19 | 18 | 4 | 9 |
+| Juni | 28 | 18 | 22 | 2 | 1 | 12 |
+| Juli | 30 | 21 | 25 | 3 | 0 | 12 |
+| August | 30 | 21 | 26 | 1 | 0 | 11 |
+| September | 27 | 18 | 25 | 16 | 3 | 9 |
+| Oktober | 22 | 15 | 23 | 69 | 6 | 7 |
+| November | 18 | 12 | 21 | 93 | 11 | 4 |
+| Desember | 14 | 9 | 18 | 138 | 15 | 3 |
+
+Kilder: holiday-weather.com, timeanddate.com (Souda Airport 1992–2021), Wikipedia
+
+### Klimanøkkeltall
+
+- **Årsnedbør**: ca. 657 mm (det meste nov–feb)
+- **Varmeste måned**: Juli (snitt 27°C, dagstemp opptil 30–35°C)
+- **Kaldeste måned**: Januar (snitt 11°C)
+- **Våteste måned**: Desember (138 mm)
+- **Tørreste måneder**: Juni–August (1–3 mm)
+- **Vindrikeste måned**: Mars (snitt 26 km/t)
+- **Havtemperatur-topp**: August (26°C)
+
+### Sesongbeskrivelser
+
+- **Mai**: Behagelig varme (23°C dag), perfekt for turer og utflukter. Havet begynner å bli badetemperatur (19°C). Lite nedbør, 9 timer sol om dagen.
+- **Juni**: Sommer starter for alvor (28°C dag). Nærmest tørt (2 mm nedbør), 12 timer sol. Havet 22°C — deilig badetemperatur.
+- **Juli**: Høysommeren — varmest (30°C dag, opptil 35°C), 12 timer sol, ingenting av regn. Havet 25°C.
+- **August**: Like varmt som juli. Tørreste måned (1 mm nedbør), havet på sitt varmeste (26°C). 11 timer sol.
+- **September**: Fortsatt varmt (27°C dag), roligere, havet holder 25°C — årets beste bademåned. Noe mer fuktighet, men fortsatt bare 3 regndager.
+- **Oktober**: Mildere (22°C dag), noen regnbyger (69 mm), men fortsatt godt badevær (hav 23°C). Lavere priser og færre turister.
+- **November–April (utenfor sesong)**: Kjøligere (13–18°C dag), mer regn og kortere dager. Havet 16–21°C. Pigi er stille og autentisk, men ikke tilrettelagt for ferie.
+
+### Badesesong
+
+- **Badetemperatur (>20°C hav)**: Juni – November
+- **Beste bademåned**: August–September (25–26°C hav, trygt og behagelig)
+- **Basseng**: Fellesbassenget er tilgjengelig hele sesongen og er soloppvarmet
+
+### UV-indeks og sol
+
+- **Sommermåneder (jun–aug)**: UV-indeks 9–11 (svært høy). Solkrem og skygge anbefales 11–16.
+- **Vår/høst (mai, sep–okt)**: UV-indeks 5–8 (moderat til høy). Fortsatt viktig med solbeskyttelse.
+- **Soloppgang/solnedgang sommer**: Ca. 06:00–20:30 (over 14 timer dagslys)
+- **Soloppgang/solnedgang vår/høst**: Ca. 06:30–19:00
+
+### Vind og sjøforhold
+
+- **Meltemi-vind**: Den kjente nordlige sommervinden blåser ofte juni–september, særlig juli–august. Gir frisk bris og behagelige temperaturer langs kysten.
+- **Vindstille dager**: Mest vanlig mai og september.
+- **Sjøforhold**: Nordkysten av Kreta (Rethymno-siden) kan få noe bølger under meltemi, men strendene i området er generelt beskyttet.
 
 ## Priser (norske kroner)
 
