@@ -9,9 +9,18 @@ description: "Domain knowledge for the Pigi Paradise booking portal. USE FOR: un
 
 - **Beliggenhet**: Pigi Paradise, landsbyen Pigi i Rethymno-regionen, Kreta, Hellas
 - **Størrelse**: Ca. 60 kvm, 6 soveplasser
+- **Senger**: 1 dobbeltseng, 2 enkeltsenger, 1 sovesofa
 - **Komplekset**: 40 enheter på 11 000 kvm tomt, 200 kvm svømmebasseng med barneseksjon, fellespark, grillområde
 - **Avstand**: 2,5 km til nærmeste strand, 10 km til Rethymno sentrum, bussholdeplass i nærheten
 - **Nabolandsby**: Loutra (ved siden av Pigi)
+
+## Fasiliteter
+
+- **Terrasse**: Stor terrasse, godt møblert
+- **Underholdning**: Apple TV med WiFi
+- **Vaskemaskin**: Ny, stor kapasitet
+- **Oppvaskmaskin**: På kjøkkenet
+- **Utvask**: Egen vaskehjelp tilgjengelig etter besøk
 
 ## Eierskap og brukere
 
@@ -28,6 +37,11 @@ description: "Domain knowledge for the Pigi Paradise booking portal. USE FOR: un
 | Utenfor sesong | November – April | Ikke tilgjengelig / ikke markedsført |
 
 ## Priser (norske kroner)
+
+Konkrete priser:
+- **Høysesong (mai–aug)**: 1 300,- kr per døgn
+- **Lavsesong (sep–okt)**: 1 000,- kr per døgn
+- **Utvask**: 1 500,- (egen vaskehjelp)
 
 Priskategorier i portalen:
 - **Pris i sesong (per natt)** — Høysesong mai–aug

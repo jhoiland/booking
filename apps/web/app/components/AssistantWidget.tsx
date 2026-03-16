@@ -25,7 +25,7 @@ const KNOWLEDGE_BASE: QA[] = [
   {
     keywords: ["størrelse", "stor", "kvadrat", "kvm", "plass", "size"],
     answer:
-      "Leiligheten er ca. 60 kvadratmeter med 6 soveplasser.",
+      "Leiligheten er ca. 60 kvadratmeter med 6 soveplasser: 1 dobbeltseng, 2 enkeltsenger og en sovesofa.",
   },
   {
     keywords: ["basseng", "pool", "svømme", "bade", "swimming"],
@@ -65,7 +65,7 @@ const KNOWLEDGE_BASE: QA[] = [
   {
     keywords: ["pris", "kost", "betale", "price", "cost", "vennepris"],
     answer:
-      "Prisene varierer etter sesong. Sjekk Priser-fanen for oppdaterte priser for høysesong (mai–aug), lavsesong (sep–okt), og utvask.",
+      "Høysesong (mai–august): 1 300 kr per døgn. Lavsesong (september–oktober): 1 000 kr per døgn. Utvask: 1 500 kr. Se Priser-fanen for komplett oversikt.",
   },
   {
     keywords: ["transport", "buss", "fly", "airport", "flyplass", "komme", "reise"],
@@ -85,17 +85,17 @@ const KNOWLEDGE_BASE: QA[] = [
   {
     keywords: ["sove", "seng", "soveplass", "sleep", "bed", "gjest"],
     answer:
-      "Leiligheten har 6 soveplasser. Ta kontakt for detaljer om sengekonfigurasjon.",
+      "Leiligheten har 6 soveplasser: 1 dobbeltseng, 2 enkeltsenger og en sovesofa.",
   },
   {
     keywords: ["vask", "utvask", "rengjøring", "clean"],
     answer:
-      "Utvask er inkludert som en egen kostnad per opphold. Sjekk Priser-fanen for gjeldende pris.",
+      "Det er en egen vaskehjelp som vasker ut etter besøket. Utvask koster 1 500 kr.",
   },
   {
-    keywords: ["wifi", "internett", "nett", "internet"],
+    keywords: ["wifi", "internett", "nett", "internet", "tv", "apple"],
     answer:
-      "Komplekset har moderne fasiliteter. Ta kontakt med eier for detaljer om WiFi-tilgang.",
+      "Leiligheten har WiFi og Apple TV.",
   },
   {
     keywords: ["historie", "history", "gammel", "venetian"],
@@ -106,6 +106,21 @@ const KNOWLEDGE_BASE: QA[] = [
     keywords: ["booking", "bestill", "reserver", "book"],
     answer:
       "For å bestille leiligheten, ta kontakt med en av eierne. Ledige perioder kan du se i Kalender-fanen.",
+  },
+  {
+    keywords: ["terrasse", "balkong", "ute", "utemøbler"],
+    answer:
+      "Leiligheten har en stor, godt møblert terrasse — perfekt for måltider ute og avslapping.",
+  },
+  {
+    keywords: ["vaskemaskin", "klesvask", "tøy", "laundry", "washing"],
+    answer:
+      "Det er en ny vaskemaskin i leiligheten med stor kapasitet.",
+  },
+  {
+    keywords: ["oppvask", "kjøkken", "dishwasher", "kitchen"],
+    answer:
+      "Kjøkkenet er utstyrt med oppvaskmaskin, og ellers det du trenger for å lage mat.",
   },
 ];
 
