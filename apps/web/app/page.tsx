@@ -190,7 +190,8 @@ export default function HomePage() {
         {activeTab === 2 && <MaintenanceTab session={session} />}
       </Box>
 
-      <AssistantWidget />
+      {/* TODO: Aktivér AssistantWidget når kunnskapsbasen er komplett */}
+      {/* <AssistantWidget /> */}
     </Box>
   );
 }
