@@ -7,6 +7,7 @@ import { supabase } from "../lib/supabaseClient";
 import BookingCalendar from "./components/BookingCalendar";
 import PricesTab from "./components/PricesTab";
 import MaintenanceTab from "./components/MaintenanceTab";
+import AssistantWidget from "./components/AssistantWidget";
 import type { Session } from "@supabase/supabase-js";
 
 export default function HomePage() {
@@ -185,6 +186,8 @@ export default function HomePage() {
         {activeTab === 1 && <PricesTab session={session} />}
         {activeTab === 2 && <MaintenanceTab session={session} />}
       </Box>
+
+      <AssistantWidget />
     </Box>
   );
 }
