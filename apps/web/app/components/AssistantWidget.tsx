@@ -63,6 +63,11 @@ const KNOWLEDGE_BASE: QA[] = [
       "Høysesong er mai–august med best vær og høyest aktivitet. Lavsesong er september–oktober — roligere og rimeligere, men fortsatt fint vær. November–april er leiligheten vanligvis ikke tilgjengelig.",
   },
   {
+    keywords: ["vær", "weather", "temperatur", "varmt", "kaldt", "regn", "sol", "klima", "grader"],
+    answer:
+      "Mai: 24°C, lite regn, 10 timer sol. Juni–august: 28–30°C, nesten ingen regn, 12–13 timer sol — perfekt strandvær. September: 27°C, havet på sitt varmeste (24°C). Oktober: 23°C, noen regnbyger, men fortsatt godt badevær. Havtemperaturen er 20–26°C gjennom sesongen.",
+  },
+  {
     keywords: ["pris", "kost", "betale", "price", "cost", "vennepris"],
     answer:
       "Høysesong (mai–august): 1 300 kr per døgn. Lavsesong (september–oktober): 1 000 kr per døgn. Utvask: 1 500 kr. Se Priser-fanen for komplett oversikt.",

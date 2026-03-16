@@ -36,6 +36,22 @@ description: "Domain knowledge for the Pigi Paradise booking portal. USE FOR: un
 | Lavsesong | September – Oktober | Lavere pris, roligere periode |
 | Utenfor sesong | November – April | Ikke tilgjengelig / ikke markedsført |
 
+## Vær i Pigi / Rethymno
+
+| Måned | Temp. (dag) | Temp. (natt) | Havtemp. | Nedbør | Sol (timer/dag) |
+|-------|-------------|--------------|----------|--------|------------------|
+| Mai | 24°C | 15°C | 20°C | Lite | 10 |
+| Juni | 28°C | 19°C | 23°C | Svært lite | 12 |
+| Juli | 30°C | 22°C | 25°C | Nesten null | 13 |
+| August | 30°C | 22°C | 26°C | Nesten null | 12 |
+| September | 27°C | 19°C | 24°C | Lite | 10 |
+| Oktober | 23°C | 16°C | 22°C | Moderat | 7 |
+
+- **Mai**: Behagelig varme, perfekt for turer og utflukter. Havet begynner å bli badetemperatur.
+- **Juni–August**: Varmt og tørt, ideelt for strand og basseng. Kan bli over 35°C innimellom.
+- **September**: Fortsatt varmt, roligere, havet er på sitt varmeste. Fin turmåned.
+- **Oktober**: Mildere, noen regnbyger, men fortsatt godt badevær. Lavere priser og færre turister.
+
 ## Priser (norske kroner)
 
 Konkrete priser:
