@@ -186,141 +186,65 @@ export default function WeatherWidget() {
 
   if (loading) {
     return (
-      <Box sx={{ display: "flex", justifyContent: "center", py: 3 }}>
-        <CircularProgress size={24} sx={{ color: "#1DB954" }} />
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1, minWidth: 80 }}>
+        <CircularProgress size={16} sx={{ color: "#1DB954" }} />
       </Box>
     );
   }
 
-  if (error || !forecast) {
-    return (
-      <Box sx={{ py: 2, textAlign: "center" }}>
-        <Typography variant="body2" color="text.secondary">
-          Kunne ikke hente værdata
-        </Typography>
-      </Box>
-    );
-  }
+  if (error || !forecast) return null;
 
   const { now, days } = forecast;
 
   return (
-    <Box>
-      <Typography
-        variant="subtitle2"
-        sx={{ color: "#1DB954", fontWeight: 700, mb: 1.5, fontSize: "0.85rem", letterSpacing: 0.5 }}
-      >
-        ☀️ VÆRET I PIGI
-      </Typography>
-
-      {/* Current weather */}
-      <Box
-        sx={{
-          bgcolor: "rgba(29,185,84,0.08)",
-          borderRadius: 2,
-          p: 2,
-          mb: 2,
-          border: "1px solid rgba(29,185,84,0.2)",
-        }}
-      >
-        <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
-          <Typography sx={{ fontSize: "2.5rem", lineHeight: 1 }}>
-            {getWeatherIcon(now.symbol)}
+    <Box sx={{ display: "flex", alignItems: "center", gap: { xs: 1, sm: 2 }, flexWrap: "nowrap" }}>
+      {/* Current temp */}
+      <Box sx={{ display: "flex", alignItems: "center", gap: 0.5, flexShrink: 0 }}>
+        <Typography sx={{ fontSize: { xs: "1.1rem", sm: "1.3rem" }, lineHeight: 1 }}>
+          {getWeatherIcon(now.symbol)}
+        </Typography>
+        <Box>
+          <Typography sx={{ fontSize: { xs: "0.85rem", sm: "1rem" }, fontWeight: 700, color: "#fff", lineHeight: 1 }}>
+            {now.temp}°C
           </Typography>
-          <Box>
-            <Typography sx={{ fontSize: "1.8rem", fontWeight: 700, color: "#fff", lineHeight: 1 }}>
-              {now.temp}°C
-            </Typography>
-            <Typography variant="body2" sx={{ color: "rgba(255,255,255,0.7)", mt: 0.3 }}>
-              Nå i Pigi
-            </Typography>
-          </Box>
-        </Box>
-
-        <Box
-          sx={{
-            display: "flex",
-            gap: 2,
-            mt: 1.5,
-            flexWrap: "wrap",
-          }}
-        >
-          <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-            <Typography sx={{ fontSize: "0.9rem" }}>💨</Typography>
-            <Typography variant="caption" sx={{ color: "rgba(255,255,255,0.7)" }}>
-              {now.wind.toFixed(1)} m/s · {getWindDescription(now.wind)}
-            </Typography>
-          </Box>
-          <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-            <Typography sx={{ fontSize: "0.9rem" }}>💧</Typography>
-            <Typography variant="caption" sx={{ color: "rgba(255,255,255,0.7)" }}>
-              {now.humidity}%
-            </Typography>
-          </Box>
-          {now.precip > 0 && (
-            <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-              <Typography sx={{ fontSize: "0.9rem" }}>🌧️</Typography>
-              <Typography variant="caption" sx={{ color: "rgba(255,255,255,0.7)" }}>
-                {now.precip} mm
-              </Typography>
-            </Box>
-          )}
+          <Typography sx={{ fontSize: "0.55rem", color: "rgba(255,255,255,0.45)", lineHeight: 1, mt: 0.2 }}>
+            Pigi nå
+          </Typography>
         </Box>
       </Box>
 
-      {/* 4-day forecast */}
-      <Box sx={{ display: "flex", gap: 1 }}>
+      {/* Compact details */}
+      <Box sx={{ display: { xs: "none", sm: "flex" }, alignItems: "center", gap: 1.5, flexShrink: 0 }}>
+        <Typography variant="caption" sx={{ color: "rgba(255,255,255,0.5)", fontSize: "0.7rem" }}>
+          💨 {now.wind.toFixed(0)} m/s
+        </Typography>
+        <Typography variant="caption" sx={{ color: "rgba(255,255,255,0.5)", fontSize: "0.7rem" }}>
+          💧 {now.humidity}%
+        </Typography>
+      </Box>
+
+      {/* Divider */}
+      <Box sx={{ width: "1px", height: 24, bgcolor: "rgba(255,255,255,0.1)", flexShrink: 0, display: { xs: "none", md: "block" } }} />
+
+      {/* 4-day mini forecast */}
+      <Box sx={{ display: { xs: "none", md: "flex" }, gap: 1, alignItems: "center" }}>
         {days.map((day) => (
           <Box
             key={day.date}
-            sx={{
-              flex: 1,
-              bgcolor: "#1a1a1a",
-              borderRadius: 1.5,
-              p: 1,
-              textAlign: "center",
-              border: "1px solid rgba(255,255,255,0.06)",
-            }}
+            sx={{ textAlign: "center", minWidth: 36 }}
           >
-            <Typography
-              variant="caption"
-              sx={{ color: "rgba(255,255,255,0.5)", fontWeight: 600, fontSize: "0.7rem" }}
-            >
+            <Typography sx={{ fontSize: "0.55rem", color: "rgba(255,255,255,0.4)", fontWeight: 600, lineHeight: 1 }}>
               {day.dayName}
             </Typography>
-            <Typography sx={{ fontSize: "1.5rem", lineHeight: 1, my: 0.5 }}>
+            <Typography sx={{ fontSize: "0.9rem", lineHeight: 1, my: 0.2 }}>
               {getWeatherIcon(day.symbol)}
             </Typography>
-            <Typography
-              variant="body2"
-              sx={{ color: "#fff", fontWeight: 700, fontSize: "0.8rem" }}
-            >
+            <Typography sx={{ fontSize: "0.65rem", color: "#fff", fontWeight: 600, lineHeight: 1 }}>
               {day.tempMax}°
             </Typography>
-            <Typography
-              variant="caption"
-              sx={{ color: "rgba(255,255,255,0.4)", fontSize: "0.7rem" }}
-            >
-              {day.tempMin}°
-            </Typography>
-            {day.precip > 0 && (
-              <Typography
-                variant="caption"
-                sx={{ display: "block", color: "#64b5f6", fontSize: "0.6rem", mt: 0.3 }}
-              >
-                {day.precip} mm
-              </Typography>
-            )}
           </Box>
         ))}
       </Box>
-
-      <Typography
-        variant="caption"
-        sx={{ display: "block", color: "rgba(255,255,255,0.25)", mt: 1, fontSize: "0.6rem", textAlign: "right" }}
-      >
-        Kilde: met.no
-      </Typography>
     </Box>
   );
 }

@@ -8,6 +8,7 @@ import BookingCalendar from "./components/BookingCalendar";
 import PricesTab from "./components/PricesTab";
 import MaintenanceTab from "./components/MaintenanceTab";
 import AssistantWidget from "./components/AssistantWidget";
+import WeatherWidget from "./components/WeatherWidget";
 import type { Session } from "@supabase/supabase-js";
 
 export default function HomePage() {
@@ -161,26 +162,28 @@ export default function HomePage() {
 
       {/* Main content */}
       <Box sx={{ p: { xs: 2, md: 4 }, maxWidth: 1200, mx: "auto" }}>
-        <Tabs
-          value={activeTab}
-          onChange={(_, v) => setActiveTab(v)}
-          sx={{
-            mb: 3,
-            "& .MuiTab-root": {
-              color: "text.secondary",
-              fontWeight: 600,
-              fontSize: { xs: "0.85rem", sm: "0.95rem" },
-              minHeight: 42,
-              textTransform: "none",
-            },
-            "& .Mui-selected": { color: "primary.main" },
-            "& .MuiTabs-indicator": { bgcolor: "primary.main" },
-          }}
-        >
-          <Tab label="Kalender" />
-          <Tab label="Priser" />
-          <Tab label="Vedlikehold" />
-        </Tabs>
+        <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: 3 }}>
+          <Tabs
+            value={activeTab}
+            onChange={(_, v) => setActiveTab(v)}
+            sx={{
+              "& .MuiTab-root": {
+                color: "text.secondary",
+                fontWeight: 600,
+                fontSize: { xs: "0.85rem", sm: "0.95rem" },
+                minHeight: 42,
+                textTransform: "none",
+              },
+              "& .Mui-selected": { color: "primary.main" },
+              "& .MuiTabs-indicator": { bgcolor: "primary.main" },
+            }}
+          >
+            <Tab label="Kalender" />
+            <Tab label="Priser" />
+            <Tab label="Vedlikehold" />
+          </Tabs>
+          <WeatherWidget />
+        </Box>
 
         {activeTab === 0 && <BookingCalendar session={session} />}
         {activeTab === 1 && <PricesTab session={session} />}

@@ -17,7 +17,6 @@ import BookingDialog from "./booking/BookingDialog";
 import MonthlySummary from "./booking/MonthlySummary";
 import type { Booking, BookingFormData } from "./booking/types";
 import SeasonChart from "./booking/SeasonChart";
-import WeatherWidget from "./WeatherWidget";
 
 interface BookingCalendarProps {
   session: Session | null;
@@ -244,16 +243,13 @@ export default function BookingCalendar({ session }: BookingCalendarProps) {
           selectionEnd={selectionEnd}
         />
 
-        {/* Monthly summary + weather */}
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-          <MonthlySummary
-            currentMonth={currentMonth}
-            bookings={bookings}
-            canEdit={canEdit}
-            onEdit={handleEditFromSummary}
-          />
-          <WeatherWidget />
-        </Box>
+        {/* Monthly summary */}
+        <MonthlySummary
+          currentMonth={currentMonth}
+          bookings={bookings}
+          canEdit={canEdit}
+          onEdit={handleEditFromSummary}
+        />
       </Box>
 
       {/* Season chart */}
